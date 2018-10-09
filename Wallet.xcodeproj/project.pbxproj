@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1128E75C216CF11B0014FC72 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1128E75B216CF11B0014FC72 /* Record.swift */; };
+		1128E75E216CF5F40014FC72 /* CreateRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1128E75D216CF5F40014FC72 /* CreateRecordViewController.swift */; };
+		1128E760216CFF0B0014FC72 /* HomeRecordViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1128E75F216CFF0B0014FC72 /* HomeRecordViewCell.swift */; };
 		11A5EF07216CB4A7005E0494 /* ObjcExceptionBridging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A5EEDF216CB3DC005E0494 /* ObjcExceptionBridging.framework */; };
 		11A5EF0A216CB4A7005E0494 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A5EEDB216CB3DB005E0494 /* RxBlocking.framework */; };
 		11A5EF0B216CB4A7005E0494 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A5EEDA216CB3DB005E0494 /* RxCocoa.framework */; };
 		11A5EF0C216CB4A7005E0494 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A5EED7216CB3DB005E0494 /* RxSwift.framework */; };
 		11A5EF0E216CB4A7005E0494 /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A5EED9216CB3DB005E0494 /* SwiftyUserDefaults.framework */; };
 		11A5EF0F216CB4A7005E0494 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A5EEDD216CB3DC005E0494 /* XCGLogger.framework */; };
+		11EA1D78216CB74E0096341B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A5EF11216CB719005E0494 /* Realm.framework */; };
+		11EA1D79216CB74E0096341B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A5EF12216CB719005E0494 /* RealmSwift.framework */; };
 		11FFD9B2216AFE7500B498FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FFD9B1216AFE7500B498FD /* AppDelegate.swift */; };
 		11FFD9B7216AFE7500B498FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11FFD9B5216AFE7500B498FD /* Main.storyboard */; };
 		11FFD9B9216AFE7600B498FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11FFD9B8216AFE7600B498FD /* Assets.xcassets */; };
@@ -21,12 +26,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1128E75B216CF11B0014FC72 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		1128E75D216CF5F40014FC72 /* CreateRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRecordViewController.swift; sourceTree = "<group>"; };
+		1128E75F216CFF0B0014FC72 /* HomeRecordViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecordViewCell.swift; sourceTree = "<group>"; };
 		11A5EED7216CB3DB005E0494 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		11A5EED9216CB3DB005E0494 /* SwiftyUserDefaults.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyUserDefaults.framework; path = Carthage/Build/iOS/SwiftyUserDefaults.framework; sourceTree = "<group>"; };
 		11A5EEDA216CB3DB005E0494 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		11A5EEDB216CB3DB005E0494 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		11A5EEDD216CB3DC005E0494 /* XCGLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCGLogger.framework; path = Carthage/Build/iOS/XCGLogger.framework; sourceTree = "<group>"; };
 		11A5EEDF216CB3DC005E0494 /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjcExceptionBridging.framework; path = Carthage/Build/iOS/ObjcExceptionBridging.framework; sourceTree = "<group>"; };
+		11A5EF11216CB719005E0494 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		11A5EF12216CB719005E0494 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		11FFD9AE216AFE7500B498FD /* Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11FFD9B1216AFE7500B498FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11FFD9B6216AFE7500B498FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -41,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11EA1D78216CB74E0096341B /* Realm.framework in Frameworks */,
+				11EA1D79216CB74E0096341B /* RealmSwift.framework in Frameworks */,
 				11A5EF07216CB4A7005E0494 /* ObjcExceptionBridging.framework in Frameworks */,
 				11A5EF0A216CB4A7005E0494 /* RxBlocking.framework in Frameworks */,
 				11A5EF0B216CB4A7005E0494 /* RxCocoa.framework in Frameworks */,
@@ -56,6 +68,8 @@
 		11A5EF06216CB4A7005E0494 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				11A5EF11216CB719005E0494 /* Realm.framework */,
+				11A5EF12216CB719005E0494 /* RealmSwift.framework */,
 				11A5EEDF216CB3DC005E0494 /* ObjcExceptionBridging.framework */,
 				11A5EEDB216CB3DB005E0494 /* RxBlocking.framework */,
 				11A5EEDA216CB3DB005E0494 /* RxCocoa.framework */,
@@ -87,7 +101,10 @@
 			isa = PBXGroup;
 			children = (
 				11FFD9B1216AFE7500B498FD /* AppDelegate.swift */,
+				1128E75B216CF11B0014FC72 /* Record.swift */,
 				11FFD9C3216B022300B498FD /* HomeViewController.swift */,
+				1128E75F216CFF0B0014FC72 /* HomeRecordViewCell.swift */,
+				1128E75D216CF5F40014FC72 /* CreateRecordViewController.swift */,
 				11FFD9B5216AFE7500B498FD /* Main.storyboard */,
 				11FFD9B8216AFE7600B498FD /* Assets.xcassets */,
 				11FFD9BA216AFE7600B498FD /* LaunchScreen.storyboard */,
@@ -179,6 +196,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyUserDefaults.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/XCGLogger.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -189,6 +208,8 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyUserDefaults.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/XCGLogger.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -202,7 +223,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				11FFD9B2216AFE7500B498FD /* AppDelegate.swift in Sources */,
+				1128E760216CFF0B0014FC72 /* HomeRecordViewCell.swift in Sources */,
 				11FFD9C4216B022300B498FD /* HomeViewController.swift in Sources */,
+				1128E75E216CF5F40014FC72 /* CreateRecordViewController.swift in Sources */,
+				1128E75C216CF11B0014FC72 /* Record.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
