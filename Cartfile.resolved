@@ -1,0 +1,4 @@
+github "DaveWoodCom/XCGLogger" "6.1.0"
+github "ReactiveX/RxSwift" "4.3.1"
+github "radex/SwiftyUserDefaults" "3.0.1"
+github "realm/realm-cocoa" "v3.11.0"

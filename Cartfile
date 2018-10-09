@@ -1,0 +1,20 @@
+# Network
+
+github "realm/realm-cocoa"
+github "radex/SwiftyUserDefaults"
+
+# RFP
+github "ReactiveX/RxSwift"
+# github "RxSwiftCommunity/RxAlamofire"
+# github "RxSwiftCommunity/RxDataSources"
+# github "RxSwiftCommunity/RxMediaPicker"
+# github "RxSwiftCommunity/RxRealm"
+# github "devxoul/RxKeyboard"
+
+
+# Log
+github "DaveWoodCom/XCGLogger"
+
+#carthage update --platform iOS
+#carthage build --platform iOS
+#carthage update --no-use-binaries --configuration Debug --platform iOS RxSwift
