@@ -10,7 +10,13 @@ import Foundation
 import RealmSwift
 
 class Record: Object {
+    @objc dynamic var id = UUID().uuidString
     @objc dynamic var title: String = ""
     @objc dynamic var cost: Double = 0
     @objc dynamic var date: Date = Date()
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+
 }

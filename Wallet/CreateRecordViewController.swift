@@ -20,40 +20,63 @@ private enum RecordKind {
 
 class CreateRecordViewController: UIViewController {
     
-    @IBOutlet private var titleTextView: UITextView!
+    @IBOutlet private var titleTextField: UITextField!
     @IBOutlet private var costTextField: UITextField!
     @IBOutlet private var datePicker: UIDatePicker!
     @IBOutlet private var kindButton: UIButton!
     
-    private var kind: RecordKind = .minus
+    private var kind: RecordKind = .plus
+    
+    private var record: Record = Record()
+    
+    private let currencyFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.usesGroupingSeparator = true
+        formatter.numberStyle = .currency
+        formatter.locale = .current
+        formatter.minimumFractionDigits = 0
+        return formatter
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        [costTextField, titleTextView].forEach { itemView in
-            itemView?.layer.borderWidth = 1
-            itemView?.layer.borderColor = UIColor.black.cgColor
-        }
         kindButtonTouched(kindButton)
+    }
+    
+    func map(record newRecord: Record) {
+        self.record = newRecord
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        titleTextField.text = record.title
+        costTextField.text = String(format: "%.0f", record.cost)
+        datePicker.date = record.date
+        map(kind: record.cost > 0 ? .plus : .minus)
+    }
+    
+    private func map(kind newKind: RecordKind) {
+        kind = newKind
+        kindButton.setTitle(kind.text, for: .normal)
+        kindButton.setTitleColor(kind.color, for: .normal)
+        costTextField.textColor = kind.color
     }
 }
 
 extension CreateRecordViewController {
     
     @IBAction func kindButtonTouched(_ sender: UIButton) {
-        kind = kind.opposite
-        kindButton.setTitle(kind.text, for: .normal)
-        kindButton.setTitleColor(kind.color, for: .normal)
+        map(kind: kind.opposite)
     }
     
     @IBAction func doneButtonTouched(_ sender: UIButton) {
-        let record = Record()
-        record.title = titleTextView.text
-        record.cost = kind.value(Double(costTextField.text!) ?? 0)
-        record.date = datePicker.date
-        
         let realm = try! Realm()
         try! realm.write {
-            realm.add(record)
+            record.title = titleTextField.text!
+            record.cost = kind.value(abs(Double(costTextField.text!) ?? 0))
+            record.date = datePicker.date
+            realm.add(record, update: true)
         }
         
         navigationController?.popViewController(animated: true)
