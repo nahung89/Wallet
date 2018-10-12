@@ -14,21 +14,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         Realm.Configuration.defaultConfiguration = Realm.Configuration(
             schemaVersion: 1,
             migrationBlock: { migration, oldSchemaVersion in
-                if (oldSchemaVersion < 1) {
+                if oldSchemaVersion < 1 {
                     // The enumerateObjects(ofType:_:) method iterates
                     // over every Person object stored in the Realm file
-                    migration.enumerateObjects(ofType: Record.className()) { oldObject, newObject in
+                    migration.enumerateObjects(ofType: Record.className()) { _, newObject in
                         newObject!["id"] = UUID().uuidString
                     }
                 }
         })
-
         
 //        // Tell Realm to use this new configuration object for the default Realm
 //        Realm.Configuration.defaultConfiguration = config
@@ -58,6 +56,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
-

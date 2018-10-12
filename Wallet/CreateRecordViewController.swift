@@ -113,8 +113,8 @@ extension CreateRecordViewController {
     @IBAction func doneButtonTouched(_ sender: UIButton) {
         let costValue: String = costTextField.text!.replacingOccurrences(of: numberFormatter.groupingSeparator, with: "")
         
-        let realm = try! Realm()
-        try! realm.write {
+        let realm = MyRealm.main
+        try? realm.write {
             record.title = titleTextField.text!
             record.cost = kind.value(abs(Double(costValue) ?? 0))
             record.date = datePicker.date
@@ -124,5 +124,3 @@ extension CreateRecordViewController {
         navigationController?.popViewController(animated: true)
     }
 }
-
-

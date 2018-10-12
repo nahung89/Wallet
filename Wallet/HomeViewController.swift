@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        realm = try! Realm()
+        realm = MyRealm.main
         
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.numberStyle = .currency
@@ -75,6 +75,7 @@ class HomeViewController: UIViewController {
 private extension HomeViewController {
     
     private func openDetail(_ record: Record) {
+        // swiftlint:disable:next force_cast
         let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CreateRecordViewController") as! CreateRecordViewController
         controller.map(record: record)
         navigationController?.pushViewController(controller, animated: true)
@@ -126,7 +127,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: HomeRecordViewCell.identifier) as! HomeRecordViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeRecordViewCell.identifier) as? HomeRecordViewCell else {
+            return UITableViewCell()
+        }
         let group = groupedItems[itemDates[indexPath.section]]
         cell.record = group?[indexPath.row]
         return cell
@@ -138,12 +141,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { [unowned self] (action, indexPath) in
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { [unowned self] (_, indexPath) in
             guard let record = self.groupedItems[self.itemDates[indexPath.section]]?[indexPath.row] else { return }
             
             let countSection = self.itemDates.count
             
-            try! self.realm.write {
+            try? self.realm.write {
                 self.realm.delete(record)
             }
             
