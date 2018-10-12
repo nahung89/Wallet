@@ -16,6 +16,7 @@
 		11A5EF0C216CB4A7005E0494 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A5EED7216CB3DB005E0494 /* RxSwift.framework */; };
 		11A5EF0E216CB4A7005E0494 /* SwiftyUserDefaults.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A5EED9216CB3DB005E0494 /* SwiftyUserDefaults.framework */; };
 		11A5EF0F216CB4A7005E0494 /* XCGLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A5EEDD216CB3DC005E0494 /* XCGLogger.framework */; };
+		11E3C56B21703AB700D26E6F /* DateHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E3C56A21703AB700D26E6F /* DateHelper.framework */; };
 		11EA1D78216CB74E0096341B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A5EF11216CB719005E0494 /* Realm.framework */; };
 		11EA1D79216CB74E0096341B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A5EF12216CB719005E0494 /* RealmSwift.framework */; };
 		11FFD9B2216AFE7500B498FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FFD9B1216AFE7500B498FD /* AppDelegate.swift */; };
@@ -37,6 +38,7 @@
 		11A5EEDF216CB3DC005E0494 /* ObjcExceptionBridging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjcExceptionBridging.framework; path = Carthage/Build/iOS/ObjcExceptionBridging.framework; sourceTree = "<group>"; };
 		11A5EF11216CB719005E0494 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		11A5EF12216CB719005E0494 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		11E3C56A21703AB700D26E6F /* DateHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DateHelper.framework; path = Carthage/Build/iOS/DateHelper.framework; sourceTree = "<group>"; };
 		11FFD9AE216AFE7500B498FD /* Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11FFD9B1216AFE7500B498FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11FFD9B6216AFE7500B498FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11E3C56B21703AB700D26E6F /* DateHelper.framework in Frameworks */,
 				11EA1D78216CB74E0096341B /* Realm.framework in Frameworks */,
 				11EA1D79216CB74E0096341B /* RealmSwift.framework in Frameworks */,
 				11A5EF07216CB4A7005E0494 /* ObjcExceptionBridging.framework in Frameworks */,
@@ -68,6 +71,7 @@
 		11A5EF06216CB4A7005E0494 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				11E3C56A21703AB700D26E6F /* DateHelper.framework */,
 				11A5EF11216CB719005E0494 /* Realm.framework */,
 				11A5EF12216CB719005E0494 /* RealmSwift.framework */,
 				11A5EEDF216CB3DC005E0494 /* ObjcExceptionBridging.framework */,
@@ -198,6 +202,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/XCGLogger.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/DateHelper.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -210,6 +215,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/XCGLogger.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/DateHelper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

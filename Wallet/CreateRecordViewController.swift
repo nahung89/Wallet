@@ -13,7 +13,7 @@ import RealmSwift
 private enum RecordKind {
     case plus, minus
     var opposite: RecordKind { return self == .plus ? .minus : .plus }
-    var text: String { return self == .plus ? "PLUS" : "MINUS" }
+    var text: String { return self == .plus ? "ADD" : "REMOVE" }
     var color: UIColor { return self == .plus ? .green : .red }
     func value(_ value: Double) -> Double { return self == .plus ? value : 0 - value }
 }
@@ -29,31 +29,69 @@ class CreateRecordViewController: UIViewController {
     
     private var record: Record = Record()
     
-    private let currencyFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.usesGroupingSeparator = true
-        formatter.numberStyle = .currency
-        formatter.locale = .current
-        formatter.minimumFractionDigits = 0
-        return formatter
-    }()
+    private let numberFormatter = NumberFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         kindButtonTouched(kindButton)
-    }
-    
-    func map(record newRecord: Record) {
-        self.record = newRecord
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.locale = Locale.current
+        numberFormatter.maximumFractionDigits = 0
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         titleTextField.text = record.title
-        costTextField.text = String(format: "%.0f", record.cost)
+        costTextField.text = numberFormatter.string(from: NSNumber(value: abs(record.cost)))
         datePicker.date = record.date
         map(kind: record.cost > 0 ? .plus : .minus)
+    }
+}
+
+extension CreateRecordViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if costTextField.text == "0" {
+            costTextField.text = ""
+        }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.locale = Locale.current
+        formatter.maximumFractionDigits = 0
+        
+        guard
+            let text = textField.text,
+            let textRange = Range(range, in: text),
+            let separator = formatter.groupingSeparator
+            else { return true }
+        
+        let cursorLocation = textField.position(from: textField.beginningOfDocument, offset: range.location + string.count)
+        
+        let finalText = text.replacingCharacters(in: textRange, with: string).replacingOccurrences(of: separator, with: "")
+        
+        if let number = formatter.number(from: finalText) {
+            textField.text = formatter.string(from: number)
+            
+            if cursorLocation != nil {
+                textField.selectedTextRange = textField.textRange(from: cursorLocation!, to: cursorLocation!)
+            }
+            
+            return false
+        }
+        
+        return true
+    }
+}
+
+extension CreateRecordViewController {
+    
+    func map(record newRecord: Record) {
+        self.record = newRecord
     }
     
     private func map(kind newKind: RecordKind) {
@@ -71,10 +109,12 @@ extension CreateRecordViewController {
     }
     
     @IBAction func doneButtonTouched(_ sender: UIButton) {
+        let costValue: String = costTextField.text!.replacingOccurrences(of: numberFormatter.groupingSeparator, with: "")
+        
         let realm = try! Realm()
         try! realm.write {
             record.title = titleTextField.text!
-            record.cost = kind.value(abs(Double(costTextField.text!) ?? 0))
+            record.cost = kind.value(abs(Double(costValue) ?? 0))
             record.date = datePicker.date
             realm.add(record, update: true)
         }
@@ -82,4 +122,5 @@ extension CreateRecordViewController {
         navigationController?.popViewController(animated: true)
     }
 }
+
 
