@@ -39,6 +39,7 @@ class CreateRecordViewController: UIViewController {
         numberFormatter.numberStyle = .decimal
         numberFormatter.locale = Locale.current
         numberFormatter.maximumFractionDigits = 0
+        numberFormatter.usesGroupingSeparator = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,6 +48,12 @@ class CreateRecordViewController: UIViewController {
         costTextField.text = numberFormatter.string(from: NSNumber(value: abs(record.cost)))
         datePicker.date = record.date
         map(kind: record.cost > 0 ? .plus : .minus)
+        
+        if record.title.isEmpty {
+            titleTextField.becomeFirstResponder()
+        } else if record.cost == 0 {
+            costTextField.becomeFirstResponder()
+        }
     }
 }
 
@@ -59,26 +66,21 @@ extension CreateRecordViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.locale = Locale.current
-        formatter.maximumFractionDigits = 0
-        
         guard
             let text = textField.text,
             let textRange = Range(range, in: text),
-            let separator = formatter.groupingSeparator
+            let separator = numberFormatter.groupingSeparator
             else { return true }
         
         let cursorLocation = textField.position(from: textField.beginningOfDocument, offset: range.location + string.count)
         
         let finalText = text.replacingCharacters(in: textRange, with: string).replacingOccurrences(of: separator, with: "")
         
-        if let number = formatter.number(from: finalText) {
-            textField.text = formatter.string(from: number)
+        if let number = numberFormatter.number(from: finalText) {
+            textField.text = numberFormatter.string(from: number)
             
-            if cursorLocation != nil {
-                textField.selectedTextRange = textField.textRange(from: cursorLocation!, to: cursorLocation!)
+            if let cursor = cursorLocation {
+                textField.selectedTextRange = textField.textRange(from: cursor, to: cursor)
             }
             
             return false
