@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class Record: Object {
+    
     @objc dynamic var id = UUID().uuidString
     @objc dynamic var title: String = ""
     @objc dynamic var cost: Double = 0
@@ -18,5 +19,4 @@ class Record: Object {
     override static func primaryKey() -> String? {
         return "id"
     }
-
 }

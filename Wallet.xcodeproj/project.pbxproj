@@ -86,6 +86,58 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		11E3C5712172E15100D26E6F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1128E75B216CF11B0014FC72 /* Record.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		11E3C5732172E18900D26E6F /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				11E3C56E217089A700D26E6F /* MyRealm.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		11E3C5742172E19700D26E6F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				11FFD9C3216B022300B498FD /* HomeViewController.swift */,
+				1128E75D216CF5F40014FC72 /* CreateRecordViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		11E3C5752172E1AA00D26E6F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1128E75F216CFF0B0014FC72 /* HomeRecordViewCell.swift */,
+				11FFD9B5216AFE7500B498FD /* Main.storyboard */,
+				11FFD9BA216AFE7600B498FD /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11E3C5762172E1BA00D26E6F /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				11FFD9B8216AFE7600B498FD /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		11E3C5772172E1D200D26E6F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				11FFD9B1216AFE7500B498FD /* AppDelegate.swift */,
+				11FFD9BD216AFE7600B498FD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		11FFD9A5216AFE7400B498FD = {
 			isa = PBXGroup;
 			children = (
@@ -106,16 +158,12 @@
 		11FFD9B0216AFE7500B498FD /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
-				11FFD9B1216AFE7500B498FD /* AppDelegate.swift */,
-				1128E75B216CF11B0014FC72 /* Record.swift */,
-				11E3C56E217089A700D26E6F /* MyRealm.swift */,
-				11FFD9C3216B022300B498FD /* HomeViewController.swift */,
-				1128E75F216CFF0B0014FC72 /* HomeRecordViewCell.swift */,
-				1128E75D216CF5F40014FC72 /* CreateRecordViewController.swift */,
-				11FFD9B5216AFE7500B498FD /* Main.storyboard */,
-				11FFD9B8216AFE7600B498FD /* Assets.xcassets */,
-				11FFD9BA216AFE7600B498FD /* LaunchScreen.storyboard */,
-				11FFD9BD216AFE7600B498FD /* Info.plist */,
+				11E3C5732172E18900D26E6F /* DataManager */,
+				11E3C5712172E15100D26E6F /* Model */,
+				11E3C5742172E19700D26E6F /* Controller */,
+				11E3C5752172E1AA00D26E6F /* View */,
+				11E3C5762172E1BA00D26E6F /* Resource */,
+				11E3C5772172E1D200D26E6F /* Supporting Files */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
