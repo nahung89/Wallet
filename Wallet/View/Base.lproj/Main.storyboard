@@ -119,9 +119,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="fHT-zh-bdA" id="qa6-Nc-G0j"/>
+                        <outlet property="viewModel" destination="86Z-GK-G5r" id="giF-tq-oxY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="86Z-GK-G5r" customClass="HomeViewModel" customModule="Wallet" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="-218" y="-367"/>
         </scene>
