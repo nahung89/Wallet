@@ -19,6 +19,7 @@
 		11E3C56B21703AB700D26E6F /* DateHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E3C56A21703AB700D26E6F /* DateHelper.framework */; };
 		11E3C56F217089A700D26E6F /* MyRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E3C56E217089A700D26E6F /* MyRealm.swift */; };
 		11E3C57B2172E32100D26E6F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E3C57A2172E32100D26E6F /* HomeViewModel.swift */; };
+		11E3C57D21738B7F00D26E6F /* DetailRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E3C57C21738B7F00D26E6F /* DetailRecordViewModel.swift */; };
 		11EA1D78216CB74E0096341B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A5EF11216CB719005E0494 /* Realm.framework */; };
 		11EA1D79216CB74E0096341B /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A5EF12216CB719005E0494 /* RealmSwift.framework */; };
 		11FFD9B2216AFE7500B498FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FFD9B1216AFE7500B498FD /* AppDelegate.swift */; };
@@ -43,6 +44,7 @@
 		11E3C56A21703AB700D26E6F /* DateHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DateHelper.framework; path = Carthage/Build/iOS/DateHelper.framework; sourceTree = "<group>"; };
 		11E3C56E217089A700D26E6F /* MyRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRealm.swift; sourceTree = "<group>"; };
 		11E3C57A2172E32100D26E6F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		11E3C57C21738B7F00D26E6F /* DetailRecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecordViewModel.swift; sourceTree = "<group>"; };
 		11FFD9AE216AFE7500B498FD /* Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11FFD9B1216AFE7500B498FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11FFD9B6216AFE7500B498FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				11E3C57A2172E32100D26E6F /* HomeViewModel.swift */,
+				11E3C57C21738B7F00D26E6F /* DetailRecordViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				1128E760216CFF0B0014FC72 /* HomeRecordViewCell.swift in Sources */,
 				11E3C57B2172E32100D26E6F /* HomeViewModel.swift in Sources */,
 				11FFD9C4216B022300B498FD /* HomeViewController.swift in Sources */,
+				11E3C57D21738B7F00D26E6F /* DetailRecordViewModel.swift in Sources */,
 				1128E75E216CF5F40014FC72 /* CreateRecordViewController.swift in Sources */,
 				1128E75C216CF11B0014FC72 /* Record.swift in Sources */,
 				11E3C56F217089A700D26E6F /* MyRealm.swift in Sources */,
