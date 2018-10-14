@@ -94,6 +94,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
                 self.tableView.deleteSections(IndexSet(integer: indexPath.section), with: .automatic)
             default: break
             }
+            self.title = self.viewModel.title
         }
         return [delete]
     }
